@@ -1,0 +1,43 @@
+{
+  "name": "graphology-assertions",
+  "version": "0.0.1",
+  "description": "Assertions for graphology.",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint *.js",
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graphology/graphology-assertions.git"
+  },
+  "keywords": [
+    "graph",
+    "graphology",
+    "assertions"
+  ],
+  "author": {
+    "name": "Guillaume Plique",
+    "url": "http://github.com/Yomguithereal"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/graphology/graphology-assertions/issues"
+  },
+  "homepage": "https://github.com/graphology/graphology-assertions#readme",
+  "devDependencies": {
+    "@yomguithereal/eslint-config": "^3.0.0",
+    "eslint": "^3.5.0",
+    "graphology": "0.4.1",
+    "mocha": "^3.0.2"
+  },
+  "eslintConfig": {
+    "extends": "@yomguithereal/eslint-config"
+  },
+  "dependencies": {
+    "lodash": "^4.16.6"
+  }
+}
