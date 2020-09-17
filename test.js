@@ -9,6 +9,12 @@ var assert = require('assert'),
 var sameNodes = lib.sameNodes,
     sameDeepNodes = lib.sameDeepNodes;
 
+function addNodesFrom(g, nodes) {
+  nodes.forEach(function(node) {
+    g.addNode(node);
+  });
+}
+
 describe('graphology-utils', function() {
 
   describe('#.sameNodes', function() {
@@ -17,8 +23,8 @@ describe('graphology-utils', function() {
       var G = new Graph(),
           H = new Graph();
 
-      G.addNodesFrom(['John', 'Martha', 'Elvis']);
-      H.addNodesFrom(['Martha', 'Elvis']);
+      addNodesFrom(G, ['John', 'Martha', 'Elvis']);
+      addNodesFrom(H, ['Martha', 'Elvis']);
 
       assert.strictEqual(sameNodes(G, H), false);
 
@@ -38,8 +44,8 @@ describe('graphology-utils', function() {
       var G = new Graph(),
           H = new Graph();
 
-      G.addNodesFrom(['John', 'Martha', 'Elvis']);
-      H.addNodesFrom(['Martha', 'Elvis']);
+      addNodesFrom(G, ['John', 'Martha', 'Elvis']);
+      addNodesFrom(H, ['Martha', 'Elvis']);
 
       assert.strictEqual(sameDeepNodes(G, H), false);
 
