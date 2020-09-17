@@ -4,7 +4,8 @@
   "description": "Assertions for graphology.",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "*.d.ts"
   ],
   "types": "./index.d.ts",
   "scripts": {
