@@ -13,7 +13,7 @@ var isEqual = require('lodash/isEqual');
  * @param  {Graph}   H - Second graph.
  * @return {boolean}
  */
-exports.sameNodes = function(G, H) {
+exports.sameNodes = function sameNodes(G, H) {
 
   if (G.order !== H.order)
     return false;
@@ -31,6 +31,21 @@ exports.sameNodes = function(G, H) {
 };
 
 /**
+ * Function returning whether the given graphs have the same edges.
+ *
+ * @param  {Graph}   G - First graph.
+ * @param  {Graph}   H - Second graph.
+ * @return {boolean}
+ */
+exports.sameEdges = function sameEdges(G, H) {
+  if (
+    G.directedSize !== H.directedSize ||
+    G.undirectedSize !== H.undirectedSize
+  )
+    return false;
+};
+
+/**
  * Function returning whether the given graphs have the same nodes & if these
  * nodes have the same attributes.
  *
@@ -38,7 +53,7 @@ exports.sameNodes = function(G, H) {
  * @param  {Graph}   H - Second graph.
  * @return {boolean}
  */
-exports.sameNodesDeep = function(G, H) {
+exports.sameNodesDeep = function sameNodesDeep(G, H) {
 
   if (G.order !== H.order)
     return false;
