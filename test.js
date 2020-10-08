@@ -7,7 +7,7 @@ var assert = require('assert'),
     lib = require('./index.js');
 
 var sameNodes = lib.sameNodes,
-    sameDeepNodes = lib.sameDeepNodes;
+    sameNodesDeep = lib.sameNodesDeep;
 
 function addNodesFrom(g, nodes) {
   nodes.forEach(function(node) {
@@ -38,7 +38,7 @@ describe('graphology-utils', function() {
     });
   });
 
-  describe('#.sameDeepNodes', function() {
+  describe('#.sameNodesDeep', function() {
 
     it('should return `true` if both graphs\' nodes & their attributes are the same.', function() {
       var G = new Graph(),
@@ -47,19 +47,19 @@ describe('graphology-utils', function() {
       addNodesFrom(G, ['John', 'Martha', 'Elvis']);
       addNodesFrom(H, ['Martha', 'Elvis']);
 
-      assert.strictEqual(sameDeepNodes(G, H), false);
+      assert.strictEqual(sameNodesDeep(G, H), false);
 
       H.addNode('John');
 
-      assert.strictEqual(sameDeepNodes(G, H), true);
+      assert.strictEqual(sameNodesDeep(G, H), true);
 
       H.setNodeAttribute('Martha', 'age', 45);
 
-      assert.strictEqual(sameDeepNodes(G, H), false);
+      assert.strictEqual(sameNodesDeep(G, H), false);
 
       G.setNodeAttribute('Martha', 'age', 45);
 
-      assert.strictEqual(sameDeepNodes(G, H), true);
+      assert.strictEqual(sameNodesDeep(G, H), true);
     });
   });
 });

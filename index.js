@@ -38,7 +38,7 @@ exports.sameNodes = function(G, H) {
  * @param  {Graph}   H - Second graph.
  * @return {boolean}
  */
-exports.sameDeepNodes = function(G, H) {
+exports.sameNodesDeep = function(G, H) {
 
   if (G.order !== H.order)
     return false;
