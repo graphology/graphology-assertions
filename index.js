@@ -6,6 +6,9 @@
  */
 var isEqual = require('lodash/isEqual');
 
+exports.isGraph = require('graphology-utils/is-graph');
+exports.isGraphConstructor = require('graphology-utils/is-graph-constructor');
+
 /**
  * Function returning whether the given graphs have the same nodes.
  *
